@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+	list-style: none;
+	font-family: 'Roboto', sans-serif;
+}
+
+::selection {
+
+}
+
+body {
+	width: 100%;
+	min-height: 800px;
+	background-image: linear-gradient(80deg, #8d02c8, #fc0a43);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.alert {
+	transition: all 0.7s;
+	opacity: 0;
+	padding: 10px 20px;
+	border-radius: 4px;
+	background: white;
+	color: #242424;
+	position: fixed;
+	top: 10px;
+	left: 10px;
+	transform: translateY(-100px);
+	z-index: 1000;
+}
+
+.alert.active .alert_bar {
+	height: 4px;
+	background: red;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	animation-name: alertbar;
+	animation-duration: 3s;
+	animation-delay: 1;
+}
+
+@keyframes alertbar {
+	from {width: 0%;}
+	to {width: 100%;}
+}
+
+.alert.active {
+	transition: all 0.7s;
+	opacity: 1;
+	transform: translateY(0px);
+}
+
+.main {
+	width: 100%;
+	min-height: 400px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.main .container {
+	width: auto;
+	height: auto;
+	min-height: 600px;
+	min-width: 500px;
+	padding: 25px 10px;
+	background: rgb(255,255,255,0.4);
+	border-radius: 5px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	grid-row-gap: 20px;
+	position: relative;
+}
+
+.main .container .output {
+	width: 340px;
+	height: 300px;
+	background: none;
+	border-radius: 10px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.main .container .output .arrows {
+	position: relative;
+	width: 47px;
+	height: 47px;
+	border-radius: 50%;
+	background: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	top: 130px;
+	cursor: pointer;
+}
+
+.main .container .output .arrows:hover {
+	transition: all 0.5s;
+	background: rgb(255,255,255,0.5);
+}
+
+.main .container .output .arrows.backward {
+	left: -20px;
+}
+
+.main .container .output .arrows.forward {
+	right: -20px;
+}
+
+.main .container .code {
+	background: #242430;
+	border: 0;
+	border-radius: 3px;
+	color: #fff;
+	font-weight: 500;
+	padding: 1px 4px;
+}
+
+.main .container .items {
+	display: flex;
+	flex-direction: row;
+	grid-column-gap: 10px;
+}
+
+
+.main .container .items .item_1 {
+	min-width: 53px;
+	min-height: 53px;
+	font-size: 0.8rem;
+	font-weight: 600;
+	cursor: pointer;
+	background: #fff;
+	border: none;
+	border-radius: 50%;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+
+.main .container .items .item_2 {
+	padding: 20px 50px;
+	cursor: pointer;
+	background: #fff;
+	border: none;
+	border-radius: 35px;
+	font-weight: 600;
+}
+
+.main .container .items .item_1:hover,
+.main .container .items .item_2:hover {
+	transition: all 0.5s;
+	box-shadow: 0 0 10px 0 black;
+}
